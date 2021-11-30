@@ -16,7 +16,8 @@ wget https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/chembl_29_sqlite
 ```
 data_29/
 ```
-
+デフォルトで`data_29`に出力するようになっているので、以下では`data_29`として説明する。
+version 27にするには、スクリプト中の`path=data_29/`となっている部分を`path=data_27/`にする必要がある。
 
 # 基本前処理済みsqliteファイルは以下
 おおもとのファイルは様々なデータを含んでいるので、基本的な前処理によってデータベースを絞る
@@ -26,10 +27,14 @@ data_29/
 上記のSqliteは使いにくい場合が多く、また、機械学習には不必要なデータも多く含んでいるため、
 以下のtsvに変換する
 
-- `data.tsv`：化合物タンパク質データ
-- `id.tsv`: IDデータ
-- `meta.tsv`: メタデータ
-- `meta_info.txt`: メタデータ
+- `data_29/data.tsv`：化合物タンパク質データ
+- `data_29/id.tsv`: IDデータ
+- `data_29/meta.tsv`: メタデータ
+- `data_29/meta_info.txt`: メタデータ
+
+これらのデータは以下で共有している
+https://drive.google.com/file/d/18YavlDiaGwY0DFqiiz0M6ME2yH2PxO22/view?usp=sharing
+
 
 ### スクリプト
 `00_<....>.py`はsqliteからこれら３つのファイルを作成する
@@ -40,7 +45,8 @@ data_29/
 
 # データセット作成
 
-データセット作成処理は基本的には、上記の`data.tsv`さえあれば実行できる。
+データセット作成処理は基本的には、上記の`data.tsv`さえあれば実行できる。（これらのデータは以下で共有している
+https://drive.google.com/file/d/18YavlDiaGwY0DFqiiz0M6ME2yH2PxO22/view?usp=sharing　）
 最終的には、`dataset.tsv`が出力される。
 
 
