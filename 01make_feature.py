@@ -4,6 +4,8 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit.Chem.rdmolops import FastFindRings
 import numpy as np
+from multiprocessing import Pool
+path="data_29"
 
 feat_names =["ngram","aac","cksaap","aaindex1","ctd","ctdc","ctdt","ctdd","apaac"]
 nondesc_feat_names=["moreau_broto","moran","geary"]
@@ -82,8 +84,6 @@ def run_compound(pair):
     return cid,f
 
 
-from multiprocessing import Pool
-path="data_29"
 fp=open(path+"/data.tsv")
 h=next(fp)
 mapping={v:i for i,v in enumerate(h.strip().split("\t"))}
