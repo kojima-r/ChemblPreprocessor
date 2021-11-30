@@ -45,11 +45,13 @@ https://drive.google.com/file/d/18YavlDiaGwY0DFqiiz0M6ME2yH2PxO22/view?usp=shari
 
 # データセット作成
 
-データセット作成処理は基本的には、上記の`data.tsv`さえあれば実行できる。（これらのデータは以下で共有している
-https://drive.google.com/file/d/18YavlDiaGwY0DFqiiz0M6ME2yH2PxO22/view?usp=sharing　）
+データセット作成処理は基本的には、上記の`data_29/data.tsv`さえあれば実行できる。（
+https://drive.google.com/file/d/18YavlDiaGwY0DFqiiz0M6ME2yH2PxO22/view?usp=sharing
+）
 最終的には、`dataset.tsv`が出力される。
 
 
+以下のコマンドで、特徴抽出及びテーブルデータ化を行う
 ```
 python 01make_feature.py
 python 02make_table.py
@@ -59,9 +61,9 @@ python 02make_table.py
 `data.tsv` から特徴量を計算（`01_<....>.py`）しテーブルtsvとして保存する（`02_<....>.py`）
 
 ### 必要ライブラリ
-- protlearn
-- rdkit
-- joblib
+- protlearn インストール例：`conda install -c conda-forge protlearn`
+- rdkit　インストール例：`conda install -c rdkit rdkit`
+- joblib インストール例：`conda install joblib`
 
 
 
